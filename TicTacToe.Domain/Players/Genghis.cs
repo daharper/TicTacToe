@@ -12,8 +12,6 @@ public class Genghis : ComputerPlayer
         AddRule<WinRule>();
         AddRule<CreateForkRule>();
         AddRule<BlockRule>();
-        AddRule<RandomCornerRule>();
-        AddRule<RandomEdgeRule>();
         AddRule<RandomRule>();
         
         Celebration = "I am the greatest!";
