@@ -11,6 +11,7 @@ public class Genghis : ComputerPlayer
         AddRule<CenterRule>();
         AddRule<WinRule>();
         AddRule<CreateForkRule>();
+        AddRule<BlockRule>();
         AddRule<RandomCornerRule>();
         AddRule<RandomEdgeRule>();
         AddRule<RandomRule>();
