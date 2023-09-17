@@ -1,10 +1,10 @@
 namespace TicTacToe.Infrastructure.Utils;
 
-public interface ISequenceValue
+public interface IOccupiableItem
 {
     public bool IsEmpty { get; }
 
     public bool IsOccupied { get; }
     
-    public bool IsSame(ISequenceValue other);
+    public bool IsSame(IOccupiableItem other);
 }

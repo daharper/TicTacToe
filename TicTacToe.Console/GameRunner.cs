@@ -68,8 +68,7 @@ public static class GameRunner
     private static (int col, int row) LocationFrom(Position position)
         => (Board.RowIndexOf(position), Board.ColumnIndexOf(position));
     
-    private static Canvas CreateCanvas()
-        => new Canvas(7, 4, "  1 2 3A _ _ _B _ _ _C _ _ _");
+    private static Canvas CreateCanvas() => new(7, 4, "  1 2 3A _ _ _B _ _ _C _ _ _");
 
     private static void DisplayCanvas(Canvas canvas)
     {

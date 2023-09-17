@@ -10,6 +10,7 @@ public class FirstMoveRule : Rule
         if (moveCount > 1) return null;
         
         var position = new CenterRule().Execute(moveCount, board, side);
+
         return position ?? new RandomCornerRule().Execute(moveCount, board, side);
     }
 }

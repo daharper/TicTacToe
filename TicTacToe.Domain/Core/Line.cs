@@ -4,6 +4,9 @@ using TicTacToe.Infrastructure.Utils;
 
 namespace TicTacToe.Domain.Core;
 
+/// <summary>
+/// Represents a line of 3 squares.
+/// </summary>
 public class Line : Sequence<Square>
 {
     /// <summary>
@@ -18,17 +21,13 @@ public class Line : Sequence<Square>
     public Line(Sequence<Square> other) : base(other[0], other[1], other[2])
         => Bob.Assumes.IsEqual(3, other.Length, "A line must have 3 squares");
     
+    /// <summary>
+    /// Determines if the line is a winning line.
+    /// </summary>
     public bool IsWin => IsFull && IsSame;
 
+    /// <summary>
+    /// Determines if the line is one step from a win.
+    /// </summary>
     public bool IsWinnable(Value value) => EmptyCount == 1 && CountOf(s => s.Value == value) == 2;
-
-    public Sequence<Square> Filter(Value value) => Filter(s => s.Value == value);
-    
-    public Sequence<Square> Crosses => Filter(Value.Cross);
-    
-    public Sequence<Square> Noughts => Filter(Value.Nought);
-
-    public bool IsEmptyOrCrosses => CountOf(s => s.IsEmpty || s.Value == Value.Cross) == 3;
-    
-    public bool IsEmptyOrNoughts => CountOf(s => s.IsEmpty || s.Value == Value.Nought) == 3;
 }

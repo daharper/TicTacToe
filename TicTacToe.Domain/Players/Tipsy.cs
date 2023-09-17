@@ -11,7 +11,7 @@ public class Tipsy : ComputerPlayer
 {
     public Tipsy(Value side) : base("Tipsy", side)
     {
-        AddRule(new RandomRule());
+        AddRule<RandomRule>();
 
         Celebration = "Wow! What happened?!";
     }

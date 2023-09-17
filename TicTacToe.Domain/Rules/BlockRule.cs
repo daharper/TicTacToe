@@ -9,6 +9,7 @@ public class BlockRule : Rule
     {
         var opponent = board.GetOtherSide(side);
         var squares = board.WinningSquares(opponent);
+
         return squares.HasItems ? squares.First.Position : null;
     }
 }

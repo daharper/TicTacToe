@@ -6,7 +6,9 @@ namespace TicTacToe.Domain.Rules;
 public class CenterRule : Rule
 {
     public override Position? Execute(int moveCount, Board board, Value side)
-        => board[Position.MiddleCenter] == Value.Empty 
-            ? Position.MiddleCenter 
+    {
+        return board[Position.MiddleCenter] == Value.Empty 
+            ? Position.MiddleCenter
             : null;
+    }
 }

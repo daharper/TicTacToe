@@ -3,15 +3,21 @@ using TicTacToe.Infrastructure.Integrity;
 
 namespace TicTacToe.Domain.Core;
 
+/// <summary>
+/// Represents a game of Tic Tac Toe.
+/// </summary>
 public class Game
 {
     private readonly List<Position> _moves = new();
     
+    /// <summary>
+    /// Initializes a new instance of the <see cref="Game"/> class.
+    /// </summary>
     public Game(Player player1, Player player2)
     {
         Bob.Expects
-            .IsNotNull(player1, "Player one has not been initialised.")
-            .IsNotNull(player2, "Player two has not been initialised.")
+            .IsNotNull(player1, "Player one has not been initialized.")
+            .IsNotNull(player2, "Player two has not been initialized.")
             .IsTrue(player1.Side != Value.Empty, "Player one has not been assigned a side.")
             .IsTrue(player2.Side != Value.Empty, "Player two has not been assigned a side.")
             .IsTrue(player1.Side != player2.Side, "Players cannot have the same side.");
@@ -26,20 +32,44 @@ public class Game
         State = State.Running;
     }
     
+    /// <summary>
+    /// Gets the moves made in the game.
+    /// </summary>
     public IEnumerable<Position> Moves => _moves;
 
-    public State State { get; private set; } 
-    
-    public Player Turn => MoveCount % 2 == 0 ? Player1 : Player2;
-
+    /// <summary>
+    /// Gets the number of moves made in the game.
+    /// </summary>
     public int MoveCount => _moves.Count;
 
+    /// <summary>
+    /// Gets the state of the game.
+    /// </summary>
+    public State State { get; private set; } 
+    
+    /// <summary>
+    /// Gets the player whose turn it is.
+    /// </summary>
+    public Player Turn => MoveCount % 2 == 0 ? Player1 : Player2;
+
+    /// <summary>
+    /// Gets the board.
+    /// </summary>
     public Board Board { get; } = new();
 
+    /// <summary>
+    /// The player who is playing as crosses.
+    /// </summary>
     public Player Player1 { get; set; }
     
+    /// <summary>
+    /// The player who is playing as noughts.
+    /// </summary>
     public Player Player2 { get; set; }
     
+    /// <summary>
+    /// Moves the player to the specified position.
+    /// </summary>
     public Player Move(Player player, Position position)
     {
         Bob.Expects

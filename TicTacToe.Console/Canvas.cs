@@ -28,8 +28,7 @@ public class Canvas
         
         var length = width * height;
         
-        Bob.Assumes.IsTrue(
-            value.Length == 0 || value.Length == length, 
+        Bob.Assumes.IsTrue(value.Length == 0 || value.Length == length, 
             "Value must be the same size as the canvas, or empty.");
         
         _pixels = new char[width * height];
@@ -60,8 +59,10 @@ public class Canvas
             for (var x = 0; x < _width; x++)
             {
                 var ch = _pixels[y * _width + x];
+
                 View.Write(ch);
             }
+
             View.WriteLine();
         }
     }

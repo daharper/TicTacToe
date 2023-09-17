@@ -7,7 +7,7 @@ namespace TicTacToe.Infrastructure.Utils;
 /// occupied. The sequence is immutable, but the contained items are not.
 /// </summary>
 /// <typeparam name="T">The type of item stored in the sequence.</typeparam>
-public class Sequence<T> where T : ISequenceValue
+public class Sequence<T> where T : IOccupiableItem
 {
     #region private
     

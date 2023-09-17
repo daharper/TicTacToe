@@ -3,7 +3,10 @@ using TicTacToe.Infrastructure.Utils;
 
 namespace TicTacToe.Domain.Core;
 
-public class Square : ISequenceValue
+/// <summary>
+/// Represents a square on the board.
+/// </summary>
+public class Square : IOccupiableItem
 {
     private const string IdPrefix = "sq";
     
@@ -40,7 +43,7 @@ public class Square : ISequenceValue
     
     public bool IsOccupied => Value != Value.Empty;
     
-    public bool IsSame(ISequenceValue other) => Value == ((Square)other).Value;
+    public bool IsSame(IOccupiableItem other) => Value == ((Square)other).Value;
     
     public override string ToString() => Value switch
     {

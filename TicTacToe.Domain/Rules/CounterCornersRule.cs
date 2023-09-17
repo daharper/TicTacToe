@@ -73,7 +73,9 @@ public class CounterCornersRule : Rule
 
         return new RandomEdgeRule().Execute(moveCount, board, side);
     }
-    
+
+    #region private methods
+
     private static (int top, int bottom) GetCornerWeight(Board board, Value side)
     {
         var top = board.TopRow.Filter(c => c.Value == side && c.IsCorner).Length;
@@ -89,4 +91,6 @@ public class CounterCornersRule : Rule
         
         return (left, right);
     }
+
+    #endregion
 }
