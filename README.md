@@ -20,7 +20,7 @@ It displays running statistics and continues until the user hits x.
 
 Both Sima Yi and Boris are unbeaten:
 
-![ConsoleScreenShot](https://github.com/daharper/TicTacToe/assets/2164086/a6aa7608-5e5f-4080-94cb-684c348c2b4d)
+![ConsoleScreenShot](https://github.com/daharper/TicTacToe/assets/2164086/a9c28cfc-0c18-4494-bf5f-902884986fa7)
 
 The results are fairly consistant over many runs.
 
