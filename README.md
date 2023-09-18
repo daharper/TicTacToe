@@ -12,8 +12,7 @@ Sima Yi uses the Minimax algorithm I adapted from a game site, he is unbeatable.
 
 You select a player by clicking on the button with their name, located below the board.
 
-**Note**: If you play against Sima Yi there may be a one second delay betwen moves - at some point I'll
-add a busy indicator. Boris seems to perform almost as well as Sima Yi without any delay.
+**Note**: If you play against Sima Yi there may be a one slight delay betwen moves.
 
 There is a console application included in the solution which randomly pits computer 
 players against each other. 
