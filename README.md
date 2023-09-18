@@ -17,8 +17,10 @@ add a busy indicator. Boris seems to perform almost as well as Sima Yi without a
 
 There is a console application included in the solution which randomly pits computer 
 players against each other. 
-It keeps statistics and continues until the user hits x.
-Sima Yi and Boris are both unbeaten:
+
+It displays running statistics and continues until the user hits x.
+
+Both Sima Yi and Boris are unbeaten:
 
 ![ConsoleScreenShot](https://github.com/daharper/TicTacToe/assets/2164086/a6aa7608-5e5f-4080-94cb-684c348c2b4d)
 
