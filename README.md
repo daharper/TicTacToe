@@ -16,7 +16,8 @@ You select a player by clicking on the button with their name, located below the
 add a busy indicator. Boris seems to perform almost as well as Sima Yi without any delay.
 
 There is a console application included in the solution which randomly pits computer 
-players against each other. It keeps statistics and continues until the user hits x.
+players against each other. 
+It keeps statistics and continues until the user hits x.
 Sima Yi and Boris are both unbeaten:
 
 ![ConsoleScreenShot](https://github.com/daharper/TicTacToe/assets/2164086/a6aa7608-5e5f-4080-94cb-684c348c2b4d)
