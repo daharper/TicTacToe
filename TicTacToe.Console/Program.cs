@@ -7,7 +7,7 @@ while (playing)
     try
     {
         GameRunner.Execute();
-        Thread.Sleep(1000);
+        Thread.Sleep(2000);
     }
     catch (Exception ex)
     {
