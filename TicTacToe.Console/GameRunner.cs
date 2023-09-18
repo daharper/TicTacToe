@@ -39,12 +39,15 @@ public static class GameRunner
     {
         View.Clear();
         DisplayStats();
+        
+        var game = Service.RandomComputerGame();
+
+        DisplayPlayers(game);
+        Thread.Sleep(2000);
 
         var canvas = CreateCanvas();
         DisplayCanvas(canvas);
-        
-        var game = Service.RandomComputerGame();
-        
+
         while (game.State == State.Running)
         {
             Thread.Sleep(500);
@@ -78,7 +81,7 @@ public static class GameRunner
 
     private static void DisplayCanvas(Canvas canvas)
     {
-        View.SetCursorPosition(0, 8);
+        View.SetCursorPosition(0, 10);
         canvas.Display();
         View.WriteLine();
         View.WriteLine();
@@ -86,13 +89,17 @@ public static class GameRunner
 
     private static void DisplayStats()
     {
-        View.WriteLine("   Name    G   W   D   L   Win %");
-        View.WriteLine();
+        View.WriteLine("  Name    G   W   D   L  Points  Win %");
+        View.WriteLine("-------- --- --- --- --- ------ -------");
 
         Stats.Do(s => View.WriteLine(s.Value));
-        
+
+        View.WriteLine("---------------------------------------");
         View.WriteLine();
     }
+
+    private static void DisplayPlayers(Game game)
+        => View.WriteLine($"Now Playing => {game.Player1.Name} (x) vs {game.Player2.Name} (o)");
 
     private static void DisplayMoves(Game game)
     {

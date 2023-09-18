@@ -25,5 +25,9 @@ public class Statistic
 
     public double WinPercentage => Games == 0 || Wins == 0 ? 0.0 : (double)Wins / Games;
 
-    public override string ToString() => $"{Name, -10} {Games, -3} {Wins, -3} {Draws, -3} {Losses, -3} {WinPercentage:P}";
+    public double Points => Wins * 3 + Draws;
+
+    public string WinPercentageText => $"{WinPercentage:P}";
+
+    public override string ToString() => $"{Name, -8} {Games, 3} {Wins, 3} {Draws, 3} {Losses, 3} {Points,6} {WinPercentageText, 7}";
 }
