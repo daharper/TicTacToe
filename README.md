@@ -14,8 +14,7 @@ You select a player by clicking on the button with their name, located below the
 
 **Note**: If you play against Sima Yi there may be a one slight delay betwen moves.
 
-There is a console application included in the solution which randomly pits computer 
-players against each other. 
+There is a computer vs compulter console application included in the solution.
 
 It displays running statistics and continues until the user hits x.
 
