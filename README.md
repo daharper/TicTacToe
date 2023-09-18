@@ -21,6 +21,6 @@ Sima Yi and Boris are both unbeaten, but Sima Yi has the better win percentage:
 
 ![ConsoleScreenShot](https://github.com/daharper/TicTacToe/assets/2164086/a6aa7608-5e5f-4080-94cb-684c348c2b4d)
 
-The results are fairly consistant over many runs, demonstrating player's strengths.
+The results are fairly consistant over many runs.
 
 This was a fun challenge to start learning about Blazor WebAssembly.
