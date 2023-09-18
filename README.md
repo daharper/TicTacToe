@@ -6,7 +6,7 @@ Simple game to explore and experiment with Blazor WebAssembly.
 
 It is a player vs computer game, who goes first is randomly selected.
 
-Three players (Tipsy, Genghis, Boris) use simple rules I created to drive the player.
+Three players (Tipsy, Genghis, Boris) use simple rules created to drive the player.
 
 Sima Yi uses the Minimax algorithm I adapted from a game site, he is unbeatable.
 
