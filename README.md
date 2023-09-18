@@ -12,7 +12,7 @@ Sima Yi uses the Minimax algorithm I adapted from a game site, he is unbeatable.
 
 You select a player by clicking on the button with their name, located below the board.
 
-**Note**: If you play against Sima Yi there may be a one slight delay betwen moves.
+**Note**: If you play against Sima Yi there may be a slight delay betwen moves.
 
 There is a computer vs compulter console application included in the solution.
 
