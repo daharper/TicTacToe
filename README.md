@@ -19,6 +19,8 @@ There is a console application included in the solution which randomly pits comp
 players against each other. It keeps statistics and continues until the user hits x.
 Sima Yi and Boris are both unbeaten, but Sima Yi has the better win percentage:
 
-![Screenshot_20230918_033355](https://github.com/daharper/TicTacToe/assets/2164086/df55a205-8246-4100-9a28-e8d1c9298993)
+![ConsoleScreenShot](https://github.com/daharper/TicTacToe/assets/2164086/a6aa7608-5e5f-4080-94cb-684c348c2b4d)
+
+The results are fairly consistant over many runs, demonstrating player's strengths.
 
 This was a fun challenge to start learning about Blazor WebAssembly.
