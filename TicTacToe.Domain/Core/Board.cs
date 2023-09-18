@@ -10,21 +10,16 @@ namespace TicTacToe.Domain.Core;
 /// </summary>
 public class Board
 {
-    public Square[] Squares;
-
-    public Board() => Squares = Clear();
-
-    public Square[] Clear()
-        => new []{ 
-            new Square(Position.TopLeft), 
-            new Square(Position.TopCenter), 
-            new Square(Position.TopRight), 
-            new Square(Position.MiddleLeft), 
-            new Square(Position.MiddleCenter), 
-            new Square(Position.MiddleRight), 
-            new Square(Position.BottomLeft), 
-            new Square(Position.BottomCenter), 
-            new Square(Position.BottomRight) 
+    public Square[] Squares= { 
+            new(Position.TopLeft), 
+            new (Position.TopCenter), 
+            new (Position.TopRight), 
+            new (Position.MiddleLeft), 
+            new (Position.MiddleCenter), 
+            new (Position.MiddleRight), 
+            new (Position.BottomLeft), 
+            new (Position.BottomCenter), 
+            new (Position.BottomRight) 
         };
     
     #region values
@@ -41,60 +36,25 @@ public class Board
     #endregion
 
     #region move
-        
-    public bool IsEmpty => Squares.All(s => s.IsEmpty);
-    
-    public bool IsAvailable(Position position) 
-        => Squares[(int)position].IsEmpty;
     
     public void Move(Position position, Value value)
     {
         Bob.Assumes.IsTrue(Squares[(int)position].IsEmpty, "Position is already taken.");
+
         Squares[(int)position].Value = value;
     }
 
     public bool IsWinningMove(Position position) 
         => LinesFromPosition(position).Any(l => l.IsWin);
     
-    public bool IsDraw 
-        => Squares.All(s => s.IsOccupied);
+    public bool IsDraw => Squares.All(s => s.IsOccupied);
     
     #endregion
     
     #region position and indexing
     
-    public int IndexOf(Position position) => (int)position;
-    
-    public Position PositionOf(int index) => (Position)index;
+    public Position PositionFrom(int row, int col) => (Position)(row * 3 + col);
 
-    public string LabelFor(Position position) => position switch
-    {
-        Position.TopLeft => "A1",
-        Position.TopCenter => "A2",
-        Position.TopRight => "A3",
-        Position.MiddleLeft => "B1",
-        Position.MiddleCenter => "B2",
-        Position.MiddleRight => "B3",
-        Position.BottomLeft => "C1",
-        Position.BottomCenter => "C2",
-        Position.BottomRight => "C3",
-        _ => throw new ArgumentOutOfRangeException(nameof(Position), position, null)
-    };
-    
-    public static bool IsEdge(Position position) 
-        => position is 
-            Position.TopCenter or 
-            Position.MiddleLeft or 
-            Position.MiddleRight or 
-            Position.BottomCenter;
-    
-    public static bool IsCorner(Position position) 
-        => position is 
-            Position.TopLeft or 
-            Position.TopRight or
-            Position.BottomLeft or 
-            Position.BottomRight;
-    
     public static int RowIndexOf(Position position) 
         => position switch{
             Position.TopLeft or Position.TopCenter or Position.TopRight => 0,
@@ -112,9 +72,6 @@ public class Board
             _ => throw new ArgumentOutOfRangeException(nameof(position), position, "Invalid position")
         };
     
-    public SquareSequence GetPositions(Value side)
-        => new SquareSequence(Squares.Where(s => s.Value == side));
-
     #endregion
     
     #region squares
@@ -136,16 +93,6 @@ public class Board
     public Square BottomCenter => Squares[7];
 
     public Square BottomRight => Squares[8];
-    
-    public Square Center => MiddleCenter;
-    
-    public Square Square(int index) => Squares[index];
-    
-    public Square Square(int row, int col) => Squares[row * 3 + col];
-    
-    public Square Square(Position position) => Squares[(int)position];
-    
-    public Square SquareAt(Position position) => Squares[(int)position];
     
     #endregion
 

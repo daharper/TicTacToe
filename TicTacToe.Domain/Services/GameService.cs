@@ -21,9 +21,9 @@ public class GameService
     
     public (Game game, Player player, Player computer) HumanVersus(string opponent)
     {
-        Player human = null!;
-        Player computer = null!;
-        Game game = null!;
+        Player human;
+        Player computer;
+        Game game;
         
         if (new Random().Next(2) == 0)
         {
@@ -45,17 +45,18 @@ public class GameService
     
     #region private methods
 
-    private Player CreateRandomPlayer(Value side, string opponent = "")
+    private static Player CreateRandomPlayer(Value side, string opponent = "")
     {
         Player player;
         
         do
         {
-            player = new Random().Next(3) switch
+            player = new Random().Next(4) switch
             {
                 0 => new Tipsy(side),
                 1 => new Boris(side),
-                2 => new Genghis(side)
+                2 => new Genghis(side),
+                _ => new SimaYi(side),
             };
         } 
         while (player.Name == opponent);
@@ -64,12 +65,13 @@ public class GameService
     }
     
 
-    private Player CreatePlayer(string opponent, Value side)
+    private static Player CreatePlayer(string opponent, Value side)
         => opponent switch
         {
             "Tipsy" => new Tipsy(side),
             "Boris" => new Boris(side),
             "Genghis" => new Genghis(side),
+            "Sima Yi" => new SimaYi(side),
             _ => throw new ArgumentException("Invalid opponent.", nameof(opponent)),
         };
     

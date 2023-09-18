@@ -1,3 +1,5 @@
+using System.Numerics;
+using System.Xml.Linq;
 using TicTacToe.Domain.Constants;
 using TicTacToe.Domain.Core;
 using TicTacToe.Domain.Players;
@@ -14,36 +16,40 @@ namespace TicTacToe.Console;
 public static class GameRunner
 {
     #region private
-    
+
+    private static readonly Dictionary<string, Statistic> Stats = new()
+    {
+        { "Tipsy", new Statistic("Tipsy") },
+        { "Genghis", new Statistic("Genghis") },
+        { "Boris", new Statistic("Boris") },
+        { "Sima Yi", new Statistic("Sima Yi") }
+    };
+
     private static readonly string[] Letters = { "A", "B", "C" };
     private static readonly string[] Numbers = { "1", "2", "3" };
     private static readonly string[] Pieces =  { " ", "X", "O" };
     
-    private static readonly Player Tipsy = new Tipsy(Value.Cross);
-    private static readonly Player Boris = new Boris(Value.Nought);
-
     private static readonly GameService Service = new();
     
     #endregion
 
     #region public methods
     
-    public static (Player, State) Execute()
+    public static void Execute()
     {
-        Player player = default!;
-        
         View.Clear();
-        
+        DisplayStats();
+
         var canvas = CreateCanvas();
         DisplayCanvas(canvas);
-
+        
         var game = Service.RandomComputerGame();
         
         while (game.State == State.Running)
         {
-            Thread.Sleep(1000);
+            Thread.Sleep(500);
             
-            player = game.Turn;    
+            var player = game.Turn;    
     
             var position = player.SelectMove(game.MoveCount, game.Board);
             game.Move(player, position);
@@ -58,9 +64,9 @@ public static class GameRunner
             DisplayMoves(game);
         }
 
-        return (player, game.State);
+        ProcessResults(game);
     }
-    
+
     #endregion
 
     #region private methods
@@ -72,10 +78,22 @@ public static class GameRunner
 
     private static void DisplayCanvas(Canvas canvas)
     {
-        View.SetCursorPosition(0, 0);
+        View.SetCursorPosition(0, 8);
         canvas.Display();
         View.WriteLine();
+        View.WriteLine();
     }
+
+    private static void DisplayStats()
+    {
+        View.WriteLine("   Name    G   W   D   L   Win %");
+        View.WriteLine();
+
+        Stats.Do(s => View.WriteLine(s.Value));
+        
+        View.WriteLine();
+    }
+
     private static void DisplayMoves(Game game)
     {
         View.WriteLine("------- Moves -------");
@@ -96,6 +114,31 @@ public static class GameRunner
                 m);
         });
     }
-    
+
+    private static void ProcessResults(Game game)
+    {
+        Stats[game.Player1.Name].Games++;
+        Stats[game.Player2.Name].Games++;
+
+        var loser = game.Turn;
+
+        if (game.State == State.Win)
+        {
+            if (loser == game.Player1)
+            {
+                Stats[game.Player1.Name].Losses++;
+                Stats[game.Player2.Name].Wins++;
+            }
+            else
+            {
+                Stats[game.Player1.Name].Wins++;
+                Stats[game.Player2.Name].Losses++;
+            }
+        }
+
+        View.WriteLine();
+        View.WriteLine(game.State == State.Win ? $"{loser.Name} lost!" : "It's a draw!");
+    }
+
     #endregion
 }

@@ -6,7 +6,7 @@ namespace TicTacToe.Domain.Core;
 /// <summary>
 /// Represents a square on the board.
 /// </summary>
-public class Square : IOccupiableItem
+public class Square : ISequenceable
 {
     private const string IdPrefix = "sq";
     
@@ -43,7 +43,7 @@ public class Square : IOccupiableItem
     
     public bool IsOccupied => Value != Value.Empty;
     
-    public bool IsSame(IOccupiableItem other) => Value == ((Square)other).Value;
+    public bool IsSame(ISequenceable other) => Value == ((Square)other).Value;
     
     public override string ToString() => Value switch
     {

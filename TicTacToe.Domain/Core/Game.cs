@@ -74,7 +74,7 @@ public class Game
     {
         Bob.Expects
             .IsTrue(State == State.Running, "Game is not running.")
-            .IsTrue(Board.IsAvailable(position), "Position is already taken.")
+            .IsTrue(Board[position] == Value.Empty, "Position is already taken.")
             .IsTrue(player == Turn, "It is not your turn.");
         
         Board.Move(position, player.Side);
