@@ -16,7 +16,7 @@ You select a player by clicking on the button with their name, located below the
 
 **Note**: If you play against Sima Yi there may be a slight delay betwen moves.
 
-There is a computer vs compulter console application included in the solution.
+There is a computer vs computer console application included in the solution.
 
 It displays running statistics and continues until the user hits x.
 
