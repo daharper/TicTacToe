@@ -1,5 +1,7 @@
 # TicTacToe
 
+This was my first exploration of WebAssembly.
+
 Simple game to explore and experiment with Blazor WebAssembly.
 
 ![GameScreenShot](https://github.com/daharper/TicTacToe/assets/2164086/9313a024-9827-45bb-bcac-8be3ce78cbfc)
