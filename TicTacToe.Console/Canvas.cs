@@ -1,5 +1,3 @@
-using TicTacToe.Infrastructure.Integrity;
-
 using View = System.Console;
 
 namespace TicTacToe.Console;
@@ -25,11 +23,6 @@ public class Canvas
     public Canvas(int width, int height, string value)
     {
         (_width, _height) = (width, height);
-        
-        var length = width * height;
-        
-        Bob.Assumes.IsTrue(value.Length == 0 || value.Length == length, 
-            "Value must be the same size as the canvas, or empty.");
         
         _pixels = new char[width * height];
 

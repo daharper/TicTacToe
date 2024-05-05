@@ -14,7 +14,7 @@
 
 
   <ItemGroup>
-    <ProjectReference Include="..\TicTacToe.Domain\TicTacToe.Domain.csproj" />
+    <ProjectReference Include="..\TicTacToe.Common\TicTacToe.Common.csproj" />
   </ItemGroup>
 
 

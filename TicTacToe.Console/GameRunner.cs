@@ -1,8 +1,5 @@
-using TicTacToe.Domain.Constants;
-using TicTacToe.Domain.Core;
-using TicTacToe.Domain.Services;
-using TicTacToe.Infrastructure.Utils;
-
+using TicTacToe.Common.Constants;
+using TicTacToe.Common.Core;
 using View = System.Console;
 
 namespace TicTacToe.Console;
@@ -24,9 +21,9 @@ public static class GameRunner
 
     private static readonly string[] Letters = { "A", "B", "C" };
     private static readonly string[] Numbers = { "1", "2", "3" };
-    private static readonly string[] Pieces =  { " ", "X", "O" };
+    private static readonly string[] Pieces =  { " ", "O", "X" };
     
-    private static readonly GameService Service = new();
+    private static readonly GameFactory Factory = new();
     
     #endregion
 
@@ -37,7 +34,7 @@ public static class GameRunner
         View.Clear();
         DisplayStats();
         
-        var game = Service.RandomComputerGame();
+        var game = Factory.CreateComputerGame();
 
         DisplayPlayers(game);
         Thread.Sleep(2000);
@@ -79,7 +76,9 @@ public static class GameRunner
     private static void DisplayCanvas(Canvas canvas)
     {
         View.SetCursorPosition(0, 10);
+        
         canvas.Display();
+        
         View.WriteLine();
         View.WriteLine();
     }
@@ -89,34 +88,41 @@ public static class GameRunner
         View.WriteLine("  Name    G   W   D   L  Points  Win %");
         View.WriteLine("-------- --- --- --- --- ------ -------");
 
-        Stats.Do(s => View.WriteLine(s.Value));
+        foreach (var stat in Stats)
+        {
+            View.WriteLine(stat.Value);
+        }
 
         View.WriteLine("---------------------------------------");
         View.WriteLine();
     }
 
     private static void DisplayPlayers(Game game)
-        => View.WriteLine($"Now Playing => {game.Player1.Name} (x) vs {game.Player2.Name} (o)");
+        => View.WriteLine($"Now Playing => {game.Player1.Name} (o) vs {game.Player2.Name} (x)");
 
     private static void DisplayMoves(Game game)
     {
         View.WriteLine("------- Moves -------");
         View.WriteLine();
+
+        var i = 0;
         
-        game.Moves.DoWithIndex((m, i) =>
+        foreach (var move in game.Moves)
         {
             var turn = i % 2 == 0 ? game.Player1 : game.Player2;
             var piece = Pieces[(int)turn.Side];
-            var (row, column) = LocationFrom(m);
-            
-            View.WriteLine("{0}. {1} to {2}{3}  ({4} selects {5})", 
+            var (row, column) = LocationFrom(move);
+
+            View.WriteLine("{0}. {1} to {2}{3}  ({4} selects {5})",
                 i + 1,
                 piece,
-                Letters[row], 
+                Letters[row],
                 Numbers[column],
                 turn.Name,
-                m);
-        });
+                move);
+            
+            ++i;
+        }
     }
 
     private static void ProcessResults(Game game)

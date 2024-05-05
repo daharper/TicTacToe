@@ -1,7 +1,8 @@
 ﻿@page "/"
+
+@using TicTacToe.Common.Core
 @using TicTacToe.Data.Constants
-@using TicTacToe.Domain.Core
-@inject GameService Service
+@inject GameFactory Factory
 
 <PageTitle>Index</PageTitle>
 
@@ -51,103 +52,4 @@ else
             </div>
         </div>
     </div>
-}
-
-@code{
-    private Timer _timer = null!;
-    private string _clock = "";
-    private int _seconds = 0;
-    
-    private Player? HumanPlayer { get; set; }
-    private Player? ComputerPlayer { get; set; }
-    
-    private Game? Game { get; set; }
-    private GameResult Result { get; set; } = GameResult.None;
-
-    private string Message { get; set; } = "Game in progress";
-    private string Opponent { get; set; } = "Tipsy";
-    
-    protected override void OnInitialized()
-    {
-        (Game, HumanPlayer, ComputerPlayer) = Service.HumanVersus(Opponent);
-        ResetClock();
-        CreateTimer();
-        ComputerMove();
-    }
-    
-    private void StartGame()
-    {
-        (Game, HumanPlayer, ComputerPlayer) = Service.HumanVersus(Opponent);
-        Message = "Game in progress";
-        Result = GameResult.None;
-        
-        ComputerMove();
-        ResetClock();
-        StateHasChanged();
-    }
-
-    private void PlayerMove(Square square)
-    {
-        if (Game!.State != State.Running) return;
-        if (square.IsOccupied) return;
-        if (Game.Turn != HumanPlayer) return;
-
-        UpdateGame(HumanPlayer, square.Position);
-
-        ComputerMove();
-        StateHasChanged();
-    }
-    
-    private void ComputerMove()
-    {
-        if (Game!.State != State.Running) return;
-        if (Game.Turn != ComputerPlayer) return;
-        
-        var position = ComputerPlayer.SelectMove(Game.MoveCount, Game.Board);
-        UpdateGame(ComputerPlayer, position);
-    }
-
-    private void UpdateGame(Player player, Position position)
-    {
-        Game!.Move(player, position);
-        
-        switch (Game!.State)
-        {
-            case State.Win:
-                Result = player == HumanPlayer ? GameResult.PlayerWon : GameResult.ComputerWon;
-                Message = $"{player.Name} won, saying '{player.Celebration}'";
-                break;
-            case State.Draw:
-                Result = GameResult.Draw;
-                Message = "Draw!";
-                break;
-        }
-    }
-    
-    private void CreateTimer()
-    {
-        _timer = new Timer(
-            _ =>
-            {
-                if (Game is null || Game.State != State.Running) return;
-
-                ++_seconds;
-                _clock = TimeSpan.FromSeconds(_seconds).ToString(@"mm\:ss");
-
-                InvokeAsync(StateHasChanged);
-            }, 
-            new AutoResetEvent(false), TimeSpan.FromSeconds(1), TimeSpan.FromSeconds(1));
-    }
-
-    private void ResetClock()
-    {
-        _seconds = 0;
-        _clock = "00:00";
-    }
-    
-    private void SetOpponent(string name)
-    {
-        Opponent = name;
-        StartGame();
-    }
 }
