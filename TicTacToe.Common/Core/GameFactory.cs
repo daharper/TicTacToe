@@ -32,14 +32,14 @@ public class GameFactory
         
         if (new Random().Next(2) == 0)
         {
-            human = new HumanPlayer(Value.Nought);
-            computer = CreatePlayer(opponent, Value.Cross);
+            human = new HumanPlayer(Value.Cross);
+            computer = CreatePlayer(opponent, Value.Nought);
             game = new Game(human, computer); 
         }
         else
         {
-            human = new HumanPlayer(Value.Cross);
-            computer = CreatePlayer(opponent, Value.Nought);
+            human = new HumanPlayer(Value.Nought);
+            computer = CreatePlayer(opponent, Value.Cross);
             game = new Game(computer, human);
         }
         

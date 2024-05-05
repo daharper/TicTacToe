@@ -6,6 +6,7 @@ namespace TicTacToe.Common.Constants;
 public enum Value
 {
     Empty = 0,
-    Nought,
-    Cross
+    Cross,
+    Nought
+    
 }

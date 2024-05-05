@@ -14,7 +14,7 @@ public class Game
     /// </summary>
     public Game(Player player1, Player player2)
     {
-        (Player1, Player2) = player1.Side == Value.Nought 
+        (Player1, Player2) = player1.Side == Value.Cross 
             ?  (player1, player2)
             :  (player2, player1);
         

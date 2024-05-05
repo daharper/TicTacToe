@@ -21,7 +21,7 @@ public static class GameRunner
 
     private static readonly string[] Letters = { "A", "B", "C" };
     private static readonly string[] Numbers = { "1", "2", "3" };
-    private static readonly string[] Pieces =  { " ", "O", "X" };
+    private static readonly string[] Pieces =  { " ", "X", "O" };
     
     private static readonly GameFactory Factory = new();
     
@@ -98,7 +98,7 @@ public static class GameRunner
     }
 
     private static void DisplayPlayers(Game game)
-        => View.WriteLine($"Now Playing => {game.Player1.Name} (o) vs {game.Player2.Name} (x)");
+        => View.WriteLine($"Now Playing => {game.Player1.Name} (X) vs {game.Player2.Name} (O)");
 
     private static void DisplayMoves(Game game)
     {
