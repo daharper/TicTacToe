@@ -4,8 +4,8 @@ This was my first exploration of WebAssembly.
 
 ### Technology
 
-- C# 12
-- .NET 8
+- C# 11
+- .NET 7
 - Blazor Wasm
 - Bootstrap
 
