@@ -9,4 +9,4 @@
 
 Simple project to explore and experiment with Blazor WebAssembly.
 
-Please see [here](www.beyondvelocity.com/post/148) for more details.
+Please see [here](https://www.beyondvelocity.com/post/148) for more details.
