@@ -228,6 +228,7 @@ end;
 {----------------------------------------------------------------------------------------------------------------------}
 procedure TMainForm.OnPieceSelected(const aPiece: TPiece);
 begin
+  if not Assigned(fGame) then exit;
   if not fGame.IsPlayerTurn then exit;
 
   var state := fGame.MovePlayer(aPiece.BoardPosition);
