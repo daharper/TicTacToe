@@ -4,9 +4,16 @@ A TicTacToe game developed in Delphi 13.1 using FMX and KAI, time-boxed to two-h
 
 Tested on an Oukitel C32 Android phone and Windows.
 
-There are four opponents of increasing difficulty, and a configurable timer.
+There are four opponents of increasing difficulty:
+
+• Tipsy - Wine Drinking Genius
+• Genghis - Conqueror 
+• Boris - German Philosopher
+• Sima Yi - Chinese Strategist (uses Minimax algorithm)
 
 To change an opponent's behavior, or add a new component, assemble tactics in Core.Players.
+
+There's a configurable timer to add pressure.
 
 The entire UI development was driven via KAI, including the animation effects.
 
