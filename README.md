@@ -1,6 +1,6 @@
 # TicTacToe
 
-A TicTacToe game developed in Delphi 13.1 using FMX and KAI.
+A TicTacToe game developed in Delphi 13.1 using FMX and Kai.
 
 The project was time-boxed to one day of development, spread over two afternoons, and had to run on both my Android phone and Windows.
 
@@ -22,7 +22,7 @@ Who goes first is randomly determined - if it is the computer, the move will be 
 
 The architecture, logic and gameplay were my effort.
 
-The entire UI was created by KAI, including the frames, layouts, and animation effects.
+The entire UI was created by Kai, including the frames, layouts, and animation effects.
 
 This is a screenshot from an Android Oukitel C32 phone:
 
