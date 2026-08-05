@@ -203,6 +203,7 @@ begin
   inherited Create(aKind);
 
   Add(TWinTactic.Create);
+  Add(TBlockTactic.Create);
   Add(TForkTactic.Create);
   Add(TCenterTactic.Create);
   Add(TRandomCornerTactic.Create);

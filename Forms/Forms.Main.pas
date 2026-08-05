@@ -216,7 +216,7 @@ begin
   fBoard.UpdatePiece(move, fGame.Ai.PieceKind);
 
   case state of
-    gsPlayerWon:
+    gsAiWon:
       OnAiVictory;
     gsDraw:
       OnDraw;
