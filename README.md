@@ -24,7 +24,7 @@ The architecture, logic and gameplay were my effort.
 
 Minimax was adapted from an example C++ solution.
 
-The entire UI was created by Kai, including the frames, layouts, and animation effects.
+The entire UI was created by Kai, including the frames, layouts, painting, and animation effects.
 
 This is a screenshot from an Android Oukitel C32 phone:
 
