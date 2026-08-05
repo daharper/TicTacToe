@@ -64,8 +64,18 @@ type
   end;
 
   TGenghis = class(TAiPlayer)
+  private
+    class var fWinTactic: ITactic;
+    class var fBlockTactic: ITactic;
+    class var fForkTactic: ITactic;
+    class var fCenterTactic: ITactic;
+    class var fOppositeCornerTactic: ITactic;
+    class var fRandomCornerTactic: ITactic;
+    class var fRandomTactic: ITactic;
   public
+    function GetMove(const aBoard: TBoardState): TBoardPosition; override;
     constructor Create(const aKind: TPieceKind);
+    class constructor Create;
   end;
 
   TBoris = class(TAiPlayer)
@@ -198,16 +208,47 @@ end;
 { TGenghis }
 
 {----------------------------------------------------------------------------------------------------------------------}
+function TGenghis.GetMove(const aBoard: TBoardState): TBoardPosition;
+begin
+  Result := bpNone;
+
+  // Never overlook victory.
+  if fWinTactic.TryGetMove(aBoard, PieceKind, Result) then exit;
+
+  // A conqueror still defends against immediate defeat.
+  if fBlockTactic.TryGetMove(aBoard, PieceKind, Result) then exit;
+
+  // From here onward, his aggressive choices can be erratic.
+  case Random(10) of
+    0..4:
+      if fForkTactic.TryGetMove(aBoard, PieceKind, Result) then exit;
+    5..6:
+      if fCenterTactic.TryGetMove(aBoard, PieceKind, Result) then exit;
+    7:
+      if fOppositeCornerTactic.TryGetMove(aBoard, PieceKind, Result) then exit;
+  end;
+
+  if fRandomCornerTactic.TryGetMove(aBoard, PieceKind, Result) then exit;
+
+  fRandomTactic.TryGetMove(aBoard, PieceKind, Result);
+end;
+
+{----------------------------------------------------------------------------------------------------------------------}
 constructor TGenghis.Create(const aKind: TPieceKind);
 begin
   inherited Create(aKind);
+end;
 
-  Add(TWinTactic.Create);
-  Add(TBlockTactic.Create);
-  Add(TForkTactic.Create);
-  Add(TCenterTactic.Create);
-  Add(TRandomCornerTactic.Create);
-  Add(TRandomTactic.Create);
+{----------------------------------------------------------------------------------------------------------------------}
+class constructor TGenghis.Create;
+begin
+  fRandomTactic         := TRandomTactic.Create;
+  fWinTactic            := TWinTactic.Create;
+  fBlockTactic          := TBlockTactic.Create;
+  fForkTactic           := TForkTactic.Create;
+  fCenterTactic         := TCenterTactic.Create;
+  fOppositeCornerTactic := TOppositeCornerTactic.Create;
+  fRandomCornerTactic   := TRandomCornerTactic.Create;
 end;
 
 { TBoris }
