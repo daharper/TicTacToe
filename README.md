@@ -16,7 +16,5 @@ This is a screenshot from Android:
 
 Here's a video of the game in action on Windows:
 
-https://github.com/user-attachments/assets/93ab5d7c-cfb5-425e-a4db-e643b096c14c
-
-
+https://github.com/user-attachments/assets/a1509ba6-f3b1-43b4-b07e-37e5c80af269
 
