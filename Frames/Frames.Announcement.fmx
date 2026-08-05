@@ -1,0 +1,40 @@
+object Announcement: TAnnouncement
+  Size.Width = 300.000000000000000000
+  Size.Height = 170.000000000000000000
+  Size.PlatformDefault = False
+  object AnnouncementGroup: TRectangle
+    Align = Contents
+    Fill.Color = xFF1A2128
+    Size.Width = 300.000000000000000000
+    Size.Height = 170.000000000000000000
+    Size.PlatformDefault = False
+    Stroke.Color = xFFF36638
+    Stroke.Thickness = 1.500000000000000000
+    XRadius = 6.000000000000000000
+    YRadius = 6.000000000000000000
+    object MessageLabel: TLabel
+      Align = Client
+      StyledSettings = [Family, Style, FontColor]
+      Margins.Left = 16.000000000000000000
+      Margins.Top = 16.000000000000000000
+      Margins.Right = 16.000000000000000000
+      Margins.Bottom = 8.000000000000000000
+      Size.Width = 268.000000000000000000
+      Size.Height = 86.000000000000000000
+      Size.PlatformDefault = False
+      TextSettings.Font.Size = 18.000000000000000000
+      TextSettings.HorzAlign = Center
+    end
+    object ButtonLayout: TLayout
+      Align = Bottom
+      Position.Y = 110.000000000000000000
+      Size.Width = 300.000000000000000000
+      Size.Height = 60.000000000000000000
+      Size.PlatformDefault = False
+      object btnOK: TButton
+        Align = Center
+        Text = 'OK'
+      end
+    end
+  end
+end

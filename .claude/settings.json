@@ -1,0 +1,11 @@
+{
+  "permissions": {
+    "allow": [
+      "Write(//c/Source/TicTacToe/**)",
+      "Write(Frames/**)",
+      "mcp__Kai__addFileToProject",
+      "mcp__Kai__openFile",
+      "mcp__Kai__getProjectInfo"
+    ]
+  }
+}

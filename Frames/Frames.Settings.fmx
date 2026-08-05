@@ -1,0 +1,100 @@
+object Settings: TSettings
+  Size.Width = 274.000000000000000000
+  Size.Height = 491.000000000000000000
+  Size.PlatformDefault = False
+  object Background: TRectangle
+    Align = Contents
+    Fill.Color = xFF1A2128
+    Size.Width = 274.000000000000000000
+    Size.Height = 491.000000000000000000
+    Size.PlatformDefault = False
+    Stroke.Color = xFFF36638
+    Stroke.Thickness = 1.500000000000000000
+    XRadius = 6.000000000000000000
+    YRadius = 6.000000000000000000
+    object CentralLayout: TLayout
+      Align = Center
+      Size.Width = 269.000000000000000000
+      Size.Height = 199.000000000000000000
+      Size.PlatformDefault = False
+      TabOrder = 0
+      object DurationLayout: TLayout
+        Align = Top
+        Size.Width = 269.000000000000000000
+        Size.Height = 50.000000000000000000
+        Size.PlatformDefault = False
+        TabOrder = 1
+        object lblDuration: TLabel
+          Position.X = 24.000000000000000000
+          Position.Y = 16.000000000000000000
+          Size.Width = 52.000000000000000000
+          Size.Height = 16.000000000000000000
+          Size.PlatformDefault = False
+          TextSettings.HorzAlign = Center
+          Text = 'Time'
+          TabOrder = 1
+        end
+        object tbDuration: TTrackBar
+          CanParentFocus = True
+          Max = 60.000000000000000000
+          Min = 1.000000000000000000
+          Orientation = Horizontal
+          Position.X = 87.000000000000000000
+          Position.Y = 14.000000000000000000
+          Size.Width = 107.000000000000000000
+          Size.Height = 19.000000000000000000
+          Size.PlatformDefault = False
+          TabOrder = 2
+          Value = 10.000000000000000000
+          OnChange = tbDurationChange
+        end
+        object lblSeconds: TLabel
+          Position.X = 204.000000000000000000
+          Position.Y = 16.000000000000000000
+          Size.Width = 34.000000000000000000
+          Size.Height = 16.000000000000000000
+          Size.PlatformDefault = False
+          TextSettings.HorzAlign = Center
+          Text = 'Duration'
+          TabOrder = 0
+        end
+      end
+      object Layout1: TLayout
+        Align = Bottom
+        Position.Y = 101.000000000000000000
+        Size.Width = 269.000000000000000000
+        Size.Height = 98.000000000000000000
+        Size.PlatformDefault = False
+        TabOrder = 2
+        object Layout2: TLayout
+          Align = Center
+          Size.Width = 105.000000000000000000
+          Size.Height = 57.000000000000000000
+          Size.PlatformDefault = False
+          TabOrder = 1
+          object Label1: TLabel
+            Align = Top
+            Size.Width = 105.000000000000000000
+            Size.Height = 16.000000000000000000
+            Size.PlatformDefault = False
+            TextSettings.HorzAlign = Center
+            Text = 'Best Score'
+            TabOrder = 2
+          end
+          object lblScore: TLabel
+            Align = Top
+            StyledSettings = [Family, Style, FontColor]
+            Position.Y = 16.000000000000000000
+            Size.Width = 105.000000000000000000
+            Size.Height = 41.000000000000000000
+            Size.PlatformDefault = False
+            TextSettings.Font.Size = 36.000000000000000000
+            TextSettings.HorzAlign = Center
+            Text = '0'
+            TabOrder = 1
+          end
+        end
+      end
+    end
+  end
+end

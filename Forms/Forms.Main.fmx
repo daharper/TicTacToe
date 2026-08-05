@@ -1,0 +1,94 @@
+object MainForm: TMainForm
+  Left = 0
+  Top = 0
+  Caption = 'TicTacToe'
+  ClientHeight = 670
+  ClientWidth = 520
+  StyleBook = MainDataModule.MBPStyleBook
+  Constraints.MinHeight = 650.000000000000000000
+  Constraints.MinWidth = 520.000000000000000000
+  FormFactor.Width = 320
+  FormFactor.Height = 480
+  FormFactor.Devices = [Desktop]
+  DesignerMasterStyle = 0
+  object MainLayout: TLayout
+    Align = Center
+    ClipChildren = True
+    Size.Width = 380.000000000000000000
+    Size.Height = 634.000000000000000000
+    Size.PlatformDefault = False
+    TabOrder = 1
+    object ControlLayout: TLayout
+      Align = Top
+      Size.Width = 380.000000000000000000
+      Size.Height = 81.000000000000000000
+      Size.PlatformDefault = False
+      TabOrder = 0
+      object NewGameLayout: TLayout
+        Align = Left
+        Size.Width = 129.000000000000000000
+        Size.Height = 81.000000000000000000
+        Size.PlatformDefault = False
+        TabOrder = 1
+        object btnNew: TButton
+          Align = TopCenter
+          Margins.Top = 4.000000000000000000
+          Position.X = 24.000000000000000000
+          Position.Y = 4.000000000000000000
+          Size.Width = 80.000000000000000000
+          Size.Height = 45.000000000000000000
+          Size.PlatformDefault = False
+          TabOrder = 0
+          Text = 'Start'
+          OnClick = btnStartClick
+        end
+      end
+      object SettingsLayout: TLayout
+        Align = Right
+        Position.X = 251.000000000000000000
+        Size.Width = 129.000000000000000000
+        Size.Height = 81.000000000000000000
+        Size.PlatformDefault = False
+        TabOrder = 0
+        object btnSettings: TButton
+          Align = TopCenter
+          Margins.Top = 4.000000000000000000
+          Position.X = 24.000000000000000000
+          Position.Y = 4.000000000000000000
+          Size.Width = 80.000000000000000000
+          Size.Height = 45.000000000000000000
+          Size.PlatformDefault = False
+          TabOrder = 0
+          Text = 'Timer'
+          OnClick = btnSettingsClick
+        end
+      end
+      object TimerLayout: TLayout
+        Align = Client
+        Size.Width = 122.000000000000000000
+        Size.Height = 81.000000000000000000
+        Size.PlatformDefault = False
+        TabOrder = 2
+      end
+    end
+    object OpponentLayout: TLayout
+      Align = Bottom
+      Position.Y = 524.000000000000000000
+      Size.Width = 380.000000000000000000
+      Size.Height = 110.000000000000000000
+      Size.PlatformDefault = False
+      TabOrder = 1
+    end
+    object BoardLayout: TLayout
+      Align = Client
+      Margins.Left = 20.000000000000000000
+      Margins.Top = 20.000000000000000000
+      Margins.Right = 20.000000000000000000
+      Margins.Bottom = 20.000000000000000000
+      Size.Width = 340.000000000000000000
+      Size.Height = 403.000000000000000000
+      Size.PlatformDefault = False
+      TabOrder = 2
+    end
+  end
+end

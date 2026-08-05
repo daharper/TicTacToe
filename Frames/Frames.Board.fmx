@@ -1,0 +1,32 @@
+object Board: TBoard
+  Size.Width = 640.000000000000000000
+  Size.Height = 480.000000000000000000
+  Size.PlatformDefault = False
+  object CellGrid: TGridPanelLayout
+    Align = Client
+    Size.Width = 640.000000000000000000
+    Size.Height = 480.000000000000000000
+    Size.PlatformDefault = False
+    ColumnCollection = <
+      item
+        Value = 33.333333333333340000
+      end
+      item
+        Value = 33.333333333333340000
+      end
+      item
+        Value = 33.333333333333340000
+      end>
+    ControlCollection = <>
+    RowCollection = <
+      item
+        Value = 33.333333333333340000
+      end
+      item
+        Value = 33.333333333333340000
+      end
+      item
+        Value = 33.333333333333340000
+      end>
+  end
+end

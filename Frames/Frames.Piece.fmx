@@ -1,0 +1,17 @@
+object Piece: TPiece
+  Size.Width = 200.000000000000000000
+  Size.Height = 200.000000000000000000
+  Size.PlatformDefault = False
+  OnClick = FrameClick
+  object pbPiece: TPaintBox
+    Align = Client
+    HitTest = False
+    Margins.Left = 36.000000000000000000
+    Margins.Top = 36.000000000000000000
+    Margins.Right = 36.000000000000000000
+    Margins.Bottom = 36.000000000000000000
+    Size.Width = 128.000000000000000000
+    Size.Height = 128.000000000000000000
+    Size.PlatformDefault = False
+  end
+end

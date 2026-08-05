@@ -1,0 +1,16 @@
+object GameTimer: TGameTimer
+  Align = Client
+  Size.Width = 120.000000000000000000
+  Size.Height = 49.000000000000000000
+  Size.PlatformDefault = False
+  object CountdownLabel: TLabel
+    Align = TopCenter
+    StyledSettings = [Family, Style, FontColor]
+    Size.Width = 120.000000000000000000
+    Size.Height = 49.000000000000000000
+    Size.PlatformDefault = False
+    TextSettings.Font.Size = 40.000000000000000000
+    TextSettings.HorzAlign = Center
+    Text = '20'
+  end
+end

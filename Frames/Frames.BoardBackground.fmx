@@ -1,0 +1,12 @@
+object BoardBackground: TBoardBackground
+  Size.Width = 640.000000000000000000
+  Size.Height = 480.000000000000000000
+  Size.PlatformDefault = False
+  object pbGrid: TPaintBox
+    Align = Contents
+    HitTest = False
+    Size.Width = 640.000000000000000000
+    Size.Height = 480.000000000000000000
+    Size.PlatformDefault = False
+  end
+end
