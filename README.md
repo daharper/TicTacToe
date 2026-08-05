@@ -6,13 +6,10 @@ Tested on an Oukitel C32 Android phone and Windows.
 
 There are four opponents of increasing difficulty:
 
-• Tipsy - Wine Drinking Genius
-
-• Genghis - Conqueror 
-
-• Boris - German Philosopher
-
-• Sima Yi - Chinese Strategist (uses Minimax algorithm)
+🍷 Tipsy – Unpredictable. Capable of brilliance or complete nonsense.
+⚔️ Genghis – Aggressive. Solid enough to punish mistakes, but occasionally overcommits.
+📚 Boris – Disciplined. Plays by the book and is difficult to outplay.
+♟️ Sima Yi – Relentless. Never gives an inch.
 
 To change an opponent's behavior, or add a new component, assemble tactics in Core.Players.
 
