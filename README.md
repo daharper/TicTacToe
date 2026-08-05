@@ -18,7 +18,7 @@ To change an opponent's behavior, or add a new component, assemble tactics in Co
 
 Start begins a new game. There's a configurable timer to add pressure. 
 
-Who goes first is randomly determined, but if it is the computer player, the move will be instant.
+Who goes first is randomly determined - if it is the computer, the move will be instant.
 
 The entire UI development was driven via KAI, including the animation effects.
 
