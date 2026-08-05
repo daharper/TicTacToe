@@ -21,6 +21,7 @@ Start begins a new game. There's a configurable timer to add pressure.
 Who goes first is randomly determined - if it is the computer, the move will be instant.
 
 The architecture, logic and gameplay were my effort.
+
 The entire UI was created by KAI, including the frames, layouts, and animation effects.
 
 This is a screenshot from an Android Oukitel C32 phone:
