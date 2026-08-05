@@ -2,7 +2,9 @@
 
 A simple TicTacToe game developed in Delphi 13.1 using FMX and KAI.
 
-Tested on a Oukitel C32 Android phone and Windows, should run on MacOS, iOS, and Linux.
+Tested on a Oukitel C32 Android phone and Windows.
+
+Other platofrm targets will need the MaterialBlackPearl style added for each desired platform.
 
 There are four opponents of increasing difficulty, and a configurable timer.
 
