@@ -20,7 +20,7 @@ Start begins a new game. There's a configurable timer to add pressure.
 
 Who goes first is randomly determined - if it is the computer, the move will be instant.
 
-The architecture, logic and game play were my effort, whilst the entire UI development was driven via KAI, including the animation effects.
+The architecture, logic and game play were my effort, whilst the entire UI development was driven by KAI, including the animation effects.
 
 This is a screenshot from an Android Oukitel C32 phone:
 
