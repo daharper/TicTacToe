@@ -6,7 +6,7 @@ Tested on Android and Windows, should run on other Mac, iOS, and Linux.
 
 There are four opponents of increasing difficulty, and a configurable timer.
 
-To change an opponent's behavior, recombine tactics, or add a new opponent.
+To change an opponent's behavior, or add a new component, assemble tactics in Core.Players.
 
 The entire UI development was driven via KAI, including the animation effects.
 
