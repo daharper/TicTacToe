@@ -2,7 +2,7 @@
 
 A simple TicTacToe game developed in Delphi 13.1 using FMX and KAI.
 
-Tested on a budget Oukitel C32 Android phone and Windows, should run on Mac, iOS, and Linux.
+Tested on a Oukitel C32 Android phone and Windows, should run on Mac, iOS, and Linux.
 
 There are four opponents of increasing difficulty, and a configurable timer.
 
