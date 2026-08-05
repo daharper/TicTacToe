@@ -14,7 +14,9 @@ This is a screenshot from Android:
 
 <img width="237" height="528" alt="Android2" src="https://github.com/user-attachments/assets/ed656b6a-5ff5-4c63-810c-375b8bf5154e" />
 
-And Windows:
+Here's a video of the game in action on Windows:
 
-<img width="519" height="700" alt="Win2" src="https://github.com/user-attachments/assets/5acc4738-1e80-472a-a25e-2ff8181a4392" />
+https://github.com/user-attachments/assets/93ab5d7c-cfb5-425e-a4db-e643b096c14c
+
+
 
