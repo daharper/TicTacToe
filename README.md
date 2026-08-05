@@ -12,7 +12,7 @@ There are four opponents of increasing difficulty:
 
 📚 Boris – Disciplined. Plays by the book and is difficult to outplay.
 
-♟️ Sima Yi – Relentless. Never gives an inch.
+♟️ Sima Yi – Relentless. Never gives an inch (Minimax).
 
 To change an opponent's behavior, or add a new component, assemble tactics in Core.Players.
 
@@ -20,7 +20,9 @@ Start begins a new game. There's a configurable timer to add pressure.
 
 Who goes first is randomly determined - if it is the computer, the move will be instant.
 
-The architecture, logic and gameplay were my effort.
+The architecture, logic and gameplay were my effort. 
+
+Minimax was adapted from an example C++ solution.
 
 The entire UI was created by Kai, including the frames, layouts, and animation effects.
 
