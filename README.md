@@ -1,6 +1,6 @@
 # TicTacToe
 
-A two-half day time boxed TicTacToe game developed in Delphi 13.1 using FMX and KAI.
+A TicTacToe game developed in Delphi 13.1 using FMX and KAI, time-boxed to two-half days of development.
 
 Tested on a Oukitel C32 Android phone and Windows.
 
