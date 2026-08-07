@@ -20,7 +20,7 @@ Start begins a new game. There's a configurable timer to add pressure.
 
 Who goes first is randomly determined - if it is the computer, the move will be instant.
 
-Best score is calculated by a considering the strength of the opponent, the timer pressure, and the number of moves.
+Best score is calculated as per the opponent, the timer pressure, and the number of moves.
 
 The architecture, logic and gameplay were my effort. 
 
