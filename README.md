@@ -2,7 +2,7 @@
 
 A TicTacToe game developed in Delphi 13.1 using FMX and Kai.
 
-The project was time-boxed to one day of development, spread over two afternoons, and had to run on both my Android phone and Windows.
+The project was time-boxed to one day of development, spread over two afternoons, and had to run on both my Android phone and Windows. The objective was to see if Kai could effectively assist with mobile UI development. I was pleasantly surprised.
 
 There are four opponents of increasing difficulty:
 
@@ -12,7 +12,7 @@ There are four opponents of increasing difficulty:
 
 📚 Boris – Disciplined. Plays by the book and is difficult to outplay.
 
-♟️ Sima Yi – Relentless. Never gives an inch (Minimax).
+♟️ Sima Yi – Relentless. Never gives an inch.
 
 To change an opponent's behavior, or add a new component, assemble tactics in Core.Players.
 
@@ -21,8 +21,6 @@ Start begins a new game. There's a configurable timer to add pressure.
 Who goes first is randomly determined - if it is the computer, the move will be instant.
 
 The architecture, logic and gameplay were my effort. 
-
-Minimax was adapted from an example C++ solution.
 
 The entire UI was created by Kai, including the frames, layouts, painting, and animation effects.
 
