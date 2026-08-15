@@ -1,6 +1,6 @@
 # TicTacToe
 
-Please see the web post [here](https://delphitnt.com/post/19) for more details.
+For more details, please see the blog post [here](https://delphitnt.com/post/19).
 
 ## Summary
 
