@@ -2,13 +2,13 @@
 
 [Please see here for more details](https://delphitnt.com/post/19)
 
+## Summary
+
 A TicTacToe game developed in Delphi 13.1 using FMX and Kai.
 
-The project was time-boxed to one day of development, spread over two afternoons, and had to run on both my Android phone and Windows. The objective was to see if Kai could effectively assist with mobile UI development. 
+Time-boxed to one day of development. 
 
-I was pleasantly surprised. 
-
-The game can always be further polished and improved, but the project has fully realized its objective.
+The objective was to see if Kai could effectively assist with mobile UI development. 
 
 There are four opponents of increasing difficulty:
 
