@@ -35,8 +35,3 @@ The entire UI was created by Kai, including the frames, layouts, painting, and a
 This is a screenshot from an Android Oukitel C32 phone:
 
 <img width="237" height="528" alt="Android2" src="https://github.com/user-attachments/assets/ed656b6a-5ff5-4c63-810c-375b8bf5154e" />
-
-And here's a low-res video of the game in action on Windows:
-
-https://github.com/user-attachments/assets/a1509ba6-f3b1-43b4-b07e-37e5c80af269
-
