@@ -1,6 +1,6 @@
 # TicTacToe
 
-For more details, please see the blog post [here](https://delphitnt.com/post/19).
+For more details, please see the blog post [here](https://beyondpotency.com/post/19).
 
 ## Summary
 
